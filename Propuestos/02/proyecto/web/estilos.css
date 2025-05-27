@@ -1,0 +1,296 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Títulos */
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Efecto gradiente solo si el navegador lo soporta */
+@supports (-webkit-background-clip: text) {
+    h1 {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+}
+
+/* Formularios */
+form {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+}
+
+/* Grupos de input */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e6ed;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    color: #2c3e50;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+/* Labels inline con inputs */
+form br {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Botón submit */
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+}
+
+input[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+/* Enlaces */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #34495e;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+a:hover {
+    background: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 73, 94, 0.3);
+}
+
+/* Mensajes de error */
+.mensaje-error,
+h2 + p strong {
+    color: #e74c3c;
+    font-weight: 600;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #e74c3c;
+}
+
+/* Mensajes de éxito */
+.mensaje-ok {
+    color: #27ae60;
+    font-weight: 600;
+    background: rgba(39, 174, 96, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #27ae60;
+}
+
+/* Lista de errores */
+ul {
+    background: rgba(231, 76, 60, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 4px solid #e74c3c;
+}
+
+ul li {
+    color: #e74c3c;
+    margin: 8px 0;
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+}
+
+ul li:before {
+    content: "⚠";
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+}
+
+/* Párrafos */
+p {
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container,
+    form {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animaciones suaves */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Mejoras específicas para las páginas JSP */
+body > h1,
+body > h2 {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+body > form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 20px auto;
+}
+
+body > p {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+body > ul {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto 20px auto;
+}
+
+body > a {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    width: auto;
+    margin: 0 auto 20px auto;
+    display: block;
+    text-align: center;
+}
